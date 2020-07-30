@@ -11,7 +11,8 @@ android {
         applicationId "com.bitriseandroidexample"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 1
+        def buildNumber = System.getenv("BITRISE_BUILD_NUMBER") ?: "1"
+        versionCode Integer.parseInt(buildNumber)
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
